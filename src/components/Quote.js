@@ -12,7 +12,7 @@ const Quote = () => {
   console.log(data);
 
   useEffect(() => {
-    dispatch(getQuote(fetchUpdateDataFromLocalStorage("BBQuotes")));
+    dispatch(getQuote(fetchUpdateDataFromLocalStorage("BBQuotes", 102)));
   }, [dispatch]);
 
   return (
