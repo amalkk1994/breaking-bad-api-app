@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getQuote } from "../redux/quoteReducer";
+import { fetchUpdateDataFromLocalStorage } from "../utilities/functionalAPIs";
 
 const Quote = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const Quote = () => {
   console.log(data);
 
   useEffect(() => {
-    dispatch(getQuote(Math.floor(Math.random() * 103)));
+    dispatch(getQuote(fetchUpdateDataFromLocalStorage("BBQuotes")));
   }, [dispatch]);
 
   return (
