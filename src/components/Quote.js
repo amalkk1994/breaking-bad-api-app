@@ -17,7 +17,7 @@ const Quote = () => {
 
   return (
     <div>
-      {!(loading === true || error !== "") && data[0] ? (
+      {!(loading === true || error !== "") && data && data[0] ? (
         <>
           <h1>{data[0].quote}</h1>
           <p>{"-" + data[0].author}</p>

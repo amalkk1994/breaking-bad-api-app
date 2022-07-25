@@ -5,6 +5,7 @@ const generateUniqueRandomNumber = (dataField, inputSet, upperLimit) => {
 
   if (inputSet.size >= upperLimit) {
     // maximum reached, clear the list
+    console.log("clear the list!");
     localStorage.setItem(dataField, JSON.stringify({ data: [] }));
   }
 
