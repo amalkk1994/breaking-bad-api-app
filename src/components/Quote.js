@@ -9,16 +9,11 @@ const Quote = () => {
   const error = useSelector((state) => state.quote.error);
   const loading = useSelector((state) => state.quote.loading);
 
-  console.log(data);
-
   useEffect(() => {
     let id = fetchUpdateDataFromLocalStorage("BBQuotes", 102);
     console.log("id", id);
     dispatch(getQuote(id));
   }, [dispatch]);
-
-  console.log("data[0]", data[0]);
-  console.log("truthy", !data[0]);
 
   return (
     <div>

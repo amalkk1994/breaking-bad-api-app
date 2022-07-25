@@ -6,6 +6,9 @@ const getQuote = createAsyncThunk("api/quote", (id) => {
     .get(`https://breakingbadapi.com/api/quotes/${id}`)
     .then((response) => {
       console.log("quote data", response.data);
+      if (!response.data[0]) {
+        window.location.reload();
+      }
       return response.data;
     })
     .catch((err) => console.log("Error from api call:" + err));
