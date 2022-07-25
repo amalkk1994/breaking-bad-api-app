@@ -4,11 +4,13 @@ const generateUniqueRandomNumber = (inputSet, upperLimit) => {
 
   let randomNum = Math.floor(Math.random() * (upperLimit + 1));
   if (inputSet && inputSet.has(randomNum)) {
-    generateUniqueRandomNumber(inputSet, upperLimit);
+    return generateUniqueRandomNumber(inputSet, upperLimit);
   } else {
     inputSet.add(randomNum);
     return randomNum;
   }
+
+  console.log("randNum - generateunique", randomNum);
 };
 
 //BBDQuotes

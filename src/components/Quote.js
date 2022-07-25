@@ -12,7 +12,9 @@ const Quote = () => {
   console.log(data);
 
   useEffect(() => {
-    dispatch(getQuote(fetchUpdateDataFromLocalStorage("BBQuotes", 102)));
+    let id = fetchUpdateDataFromLocalStorage("BBQuotes", 102);
+    console.log("id", id);
+    dispatch(getQuote(id));
   }, [dispatch]);
 
   return (
