@@ -7,7 +7,8 @@ const getQuote = createAsyncThunk("api/quote", (id) => {
     .then((response) => {
       console.log("quote data", response.data);
       return response.data;
-    });
+    })
+    .catch((err) => console.log("Error from api call:" + err));
 });
 
 const quoteSlice = createSlice({

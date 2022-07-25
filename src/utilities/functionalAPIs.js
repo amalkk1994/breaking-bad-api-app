@@ -1,11 +1,17 @@
-const generateUniqueRandomNumber = (inputSet, upperLimit) => {
+const generateUniqueRandomNumber = (dataField, inputSet, upperLimit) => {
   //  let localStorageVal = JSON.parse(localStorage.getItem("breakingBadData"));
   console.log("upperLimit", upperLimit);
+  console.log("input set size", inputSet.size);
+
+  if (inputSet.size >= upperLimit) {
+    // maximum reached, clear the list
+    localStorage.setItem(dataField, JSON.stringify({ data: [] }));
+  }
 
   let randomNum = Math.floor(Math.random() * (upperLimit + 1));
   console.log("randNum - generateunique", randomNum);
   if (inputSet && inputSet.has(randomNum)) {
-    return generateUniqueRandomNumber(inputSet, upperLimit);
+    return generateUniqueRandomNumber(dataField, inputSet, upperLimit);
   } else {
     inputSet.add(randomNum);
     return randomNum;
@@ -21,15 +27,11 @@ const fetchUpdateDataFromLocalStorage = (dataField, fieldLength) => {
 
   if (localData && localData.data) {
     uniqueSet = new Set([...localData.data]);
-    if (uniqueSet.size === fieldLength) {
-      // maximum reached, clear the list
-      localStorage.setItem(dataField, JSON.stringify({ data: [] }));
-    }
   } else {
     uniqueSet = new Set();
   }
 
-  const randNum = generateUniqueRandomNumber(uniqueSet, fieldLength);
+  const randNum = generateUniqueRandomNumber(dataField, uniqueSet, fieldLength);
   console.log("randomNum", randNum);
   uniqueSet.add(randNum);
 

@@ -17,6 +17,9 @@ const Quote = () => {
     dispatch(getQuote(id));
   }, [dispatch]);
 
+  console.log("data[0]", data[0]);
+  console.log("truthy", !data[0]);
+
   return (
     <div>
       {!(loading === true || error !== "") && data[0] ? (
