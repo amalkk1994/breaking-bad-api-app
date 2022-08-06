@@ -1,9 +1,12 @@
+import Character from "../components/Character"
+
 const DailyCharacters = () => {
   return (
     <div>
-      <p>Daily characters</p>
+      <p>Character page</p>
+      <Character />
     </div>
-  );
-};
+  )
+}
 
-export default DailyCharacters;
+export default DailyCharacters

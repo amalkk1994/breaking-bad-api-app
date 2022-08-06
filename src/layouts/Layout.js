@@ -1,16 +1,16 @@
-import Container from "../components/Container";
-import { Outlet } from "react-router-dom";
+import Container from "../components/Container"
+import { Outlet } from "react-router-dom"
 
 const Layout = () => {
   return (
     <div>
       <h2>This is the common layout</h2>
       <Container />
-      <dov>
+      <div>
         <Outlet />
-      </dov>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

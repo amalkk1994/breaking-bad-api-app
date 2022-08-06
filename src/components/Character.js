@@ -1,0 +1,46 @@
+import NameValuePair from "./NameValuePair"
+
+const Character = () => {
+  const apiData = [
+    {
+      char_id: 1,
+      name: "Walter White",
+      birthday: "09-07-1958",
+      occupation: ["High School Chemistry Teacher", "Meth King Pin"],
+      img: "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg",
+      status: "Presumed dead",
+      nickname: "Heisenberg",
+      appearance: [1, 2, 3, 4, 5],
+      portrayed: "Bryan Cranston",
+      category: "Breaking Bad",
+      better_call_saul_appearance: [],
+    },
+  ]
+
+  return (
+    <div className="flex flex-col bg-slate-200 w-max m-20 p-10">
+      <h1 className="text-5xl font-black m-4 text-slate-800">
+        {apiData[0].name}
+      </h1>
+      <img
+        src={apiData[0].img}
+        alt={apiData[0].name}
+        className="h-80 self-center"
+      />
+      <div className="self-center">
+        <NameValuePair fieldName="Birth Day" fieldValue={apiData[0].birthday} />
+        <NameValuePair
+          fieldName="Occupation"
+          fieldValue={apiData[0].occupation[0]}
+        />
+        <NameValuePair fieldName="Nick name" fieldValue={apiData[0].nickname} />
+        <NameValuePair
+          fieldName="Portrayed By"
+          fieldValue={apiData[0].portrayed}
+        />
+      </div>
+    </div>
+  )
+}
+
+export default Character
