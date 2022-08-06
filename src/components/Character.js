@@ -1,7 +1,7 @@
 import NameValuePairForGrid from "./NameValuePairForGrid"
 
-const Character = () => {
-  const apiData = [
+const Character = (props) => {
+  const apiDataDummy = [
     {
       char_id: 1,
       name: "Walter White",
@@ -17,32 +17,34 @@ const Character = () => {
     },
   ]
 
+  const apiData = props.data.length > 0 ? props.data : apiDataDummy
+
   return (
-    <div className="flex flex-col bg-slate-200 w-max m-20 p-10">
+    <div className="flex flex-col bg-slate-200 w-max my-20 p-10 mx-auto">
       <h1 className="text-5xl font-black m-4 text-slate-800">
-        {apiData[0].name}
+        {apiData[0]?.name}
       </h1>
       <img
-        src={apiData[0].img}
-        alt={apiData[0].name}
+        src={apiData[0]?.img}
+        alt={apiData[0]?.name}
         className="h-80 self-center mb-6"
       />
-      <div className="grid grid-cols-2 gap-y-2">
+      <div className="grid grid-cols-2 gap-y-2 bg-slate-100 p-10">
         <NameValuePairForGrid
           fieldName="Birth Day"
-          fieldValue={apiData[0].birthday}
+          fieldValue={apiData[0]?.birthday}
         />
         <NameValuePairForGrid
           fieldName="Occupation"
-          fieldValue={apiData[0].occupation[0]}
+          fieldValue={apiData[0]?.occupation[0]}
         />
         <NameValuePairForGrid
           fieldName="Nick name"
-          fieldValue={apiData[0].nickname}
+          fieldValue={apiData[0]?.nickname}
         />
         <NameValuePairForGrid
           fieldName="Portrayed By"
-          fieldValue={apiData[0].portrayed}
+          fieldValue={apiData[0]?.portrayed}
         />
       </div>
     </div>
