@@ -1,4 +1,4 @@
-import NameValuePair from "./NameValuePair"
+import NameValuePairForGrid from "./NameValuePairForGrid"
 
 const Character = () => {
   const apiData = [
@@ -25,16 +25,22 @@ const Character = () => {
       <img
         src={apiData[0].img}
         alt={apiData[0].name}
-        className="h-80 self-center"
+        className="h-80 self-center mb-6"
       />
-      <div className="self-center">
-        <NameValuePair fieldName="Birth Day" fieldValue={apiData[0].birthday} />
-        <NameValuePair
+      <div className="grid grid-cols-2 gap-y-2">
+        <NameValuePairForGrid
+          fieldName="Birth Day"
+          fieldValue={apiData[0].birthday}
+        />
+        <NameValuePairForGrid
           fieldName="Occupation"
           fieldValue={apiData[0].occupation[0]}
         />
-        <NameValuePair fieldName="Nick name" fieldValue={apiData[0].nickname} />
-        <NameValuePair
+        <NameValuePairForGrid
+          fieldName="Nick name"
+          fieldValue={apiData[0].nickname}
+        />
+        <NameValuePairForGrid
           fieldName="Portrayed By"
           fieldValue={apiData[0].portrayed}
         />
