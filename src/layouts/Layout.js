@@ -1,10 +1,11 @@
 import Container from "../components/Container"
 import { Outlet } from "react-router-dom"
+import NavBar from "../components/NavBar"
 
 const Layout = () => {
   return (
     <div>
-      <h2>This is the common layout</h2>
+      <NavBar />
       <Container />
       <div>
         <Outlet />

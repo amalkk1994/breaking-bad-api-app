@@ -18,7 +18,6 @@ const DailyCharacters = () => {
 
   return (
     <div>
-      <p>Character page</p>
       <Character data={apiData} />
     </div>
   )

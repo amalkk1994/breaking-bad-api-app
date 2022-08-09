@@ -1,11 +1,12 @@
 import React from "react"
 import Quote from "../components/Quote"
+import Menu from "../components/Menu"
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
       <Quote />
+      <Menu />
     </div>
   )
 }
