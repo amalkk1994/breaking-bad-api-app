@@ -1,6 +1,7 @@
 import NameValuePairForGrid from "./NameValuePairForGrid"
 
 const Character = (props) => {
+  /*
   const apiDataDummy = [
     {
       char_id: 1,
@@ -17,7 +18,9 @@ const Character = (props) => {
     },
   ]
 
-  const apiData = props.data.length > 0 ? props.data : apiDataDummy
+  */
+  // const apiData = props.data.length > 0 ? props.data : apiDataDummy
+  const apiData = props.data
 
   return (
     <div className="flex flex-col bg-slate-200 w-max my-20 p-10 mx-auto">
