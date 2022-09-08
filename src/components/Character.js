@@ -23,7 +23,9 @@ const Character = (props) => {
   const apiData = props.data
 
   return (
-    <div className="flex flex-col bg-slate-200 w-max my-20 p-10 mx-auto">
+    <div
+      className={`flex flex-col bg-slate-200 w-max p-10 mx-auto ${props.scale}`}
+    >
       <h1 className="text-5xl font-black m-4 text-slate-800">
         {apiData?.name}
       </h1>
