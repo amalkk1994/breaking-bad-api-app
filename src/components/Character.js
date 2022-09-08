@@ -25,29 +25,29 @@ const Character = (props) => {
   return (
     <div className="flex flex-col bg-slate-200 w-max my-20 p-10 mx-auto">
       <h1 className="text-5xl font-black m-4 text-slate-800">
-        {apiData[0]?.name}
+        {apiData?.name}
       </h1>
       <img
-        src={apiData[0]?.img}
-        alt={apiData[0]?.name}
+        src={apiData?.img}
+        alt={apiData?.name}
         className="h-80 self-center mb-6"
       />
       <div className="grid grid-cols-2 gap-y-2 bg-slate-100 p-10">
         <NameValuePairForGrid
           fieldName="Birth Day"
-          fieldValue={apiData[0]?.birthday}
+          fieldValue={apiData?.birthday}
         />
         <NameValuePairForGrid
           fieldName="Occupation"
-          fieldValue={apiData[0]?.occupation[0]}
+          fieldValue={apiData?.occupation[0]}
         />
         <NameValuePairForGrid
           fieldName="Nick name"
-          fieldValue={apiData[0]?.nickname}
+          fieldValue={apiData?.nickname}
         />
         <NameValuePairForGrid
           fieldName="Portrayed By"
-          fieldValue={apiData[0]?.portrayed}
+          fieldValue={apiData?.portrayed}
         />
       </div>
     </div>

@@ -20,7 +20,7 @@ const DailyCharacters = () => {
 
   return (
     <div>
-      <Character data={apiData} />
+      <Character data={apiData[0]} />
     </div>
   )
 }
