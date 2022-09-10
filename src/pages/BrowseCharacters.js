@@ -17,10 +17,10 @@ const BrowseCharacters = () => {
       <h2 className="text-2xl font-black m-2">Browse Characters</h2>
       <SearchBar />
       <div>
-        <ul className="grid grid-cols-3 gap-10">
+        <ul className="grid grid-cols-3 gap-10 mt-5">
           {apiData?.map((elt) => (
             <li key={elt.char_id}>
-              <Character data={elt} />
+              <Character data={elt} scale="min-w-max" />
             </li>
           ))}
         </ul>

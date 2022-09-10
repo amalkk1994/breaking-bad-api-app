@@ -24,7 +24,7 @@ const Character = (props) => {
 
   return (
     <div
-      className={`flex flex-col bg-slate-200 w-max p-5 mx-auto ${props.scale}`}
+      className={`flex flex-col bg-slate-200 p-5 mx-auto ${props.scale} min-w-min`}
     >
       <h1 className="text-2xl font-black mb-4 text-slate-800 text-center">
         {apiData?.name}
@@ -34,7 +34,7 @@ const Character = (props) => {
         alt={apiData?.name}
         className="h-40 self-center mb-6"
       />
-      <div className="grid grid-cols-2 gap-y-2 bg-slate-100 p-5">
+      <div className="grid grid-cols-1 gap-y-2 bg-slate-100 p-5">
         <NameValuePairForGrid
           fieldName="Birth Day"
           fieldValue={apiData?.birthday}
