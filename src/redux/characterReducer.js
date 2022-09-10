@@ -14,18 +14,22 @@ const getCharacter = createAsyncThunk("api/character", (id) => {
     .catch((err) => console.log("Error from get character API"))
 })
 
-const getAllCharacters = createAsyncThunk("api/characters", () => {
-  return axios
-    .get(`https://www.breakingbadapi.com/api/characters`)
-    .then((response) => {
-      console.log("All characters", response.data)
-      if (!response.data) {
-        window.location.reload()
-      }
-      return response.data
-    })
-    .catch((err) => console.log("Error from all characters"))
-})
+const getAllCharacters = createAsyncThunk(
+  "api/characters",
+  (setFilteredData) => {
+    return axios
+      .get(`https://www.breakingbadapi.com/api/characters`)
+      .then((response) => {
+        console.log("All characters", response.data)
+        if (!response.data) {
+          window.location.reload()
+        }
+        setFilteredData(response.data)
+        return response.data
+      })
+      .catch((err) => console.log("Error from all characters"))
+  }
+)
 
 const characterSlice = createSlice({
   name: "character",
