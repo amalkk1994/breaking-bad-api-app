@@ -51,28 +51,32 @@ const fetchUpdateDataFromLocalStorage = (dataField, fieldLength) => {
 const formQuestion = async (noOfOptions, type) => {
   let id = fetchUpdateDataFromLocalStorage("BBQuiz", 115)
 
-  let response1 = await axios.get(
-    `https://www.breakingbadapi.com/api/characters/${id}`
+  let response1 = await callApi(
+    `https://www.breakingbadapi.com/api/characters/${id}`,
+    5
   )
 
   console.log("response 1", response1)
 
   id = fetchUpdateDataFromLocalStorage("BBQuiz", 115)
 
-  let response2 = await axios.get(
-    `https://www.breakingbadapi.com/api/characters/${id}`
+  let response2 = await await callApi(
+    `https://www.breakingbadapi.com/api/characters/${id}`,
+    5
   )
 
   id = fetchUpdateDataFromLocalStorage("BBQuiz", 115)
 
-  let response3 = await axios.get(
-    `https://www.breakingbadapi.com/api/characters/${id}`
+  let response3 = await await callApi(
+    `https://www.breakingbadapi.com/api/characters/${id}`,
+    5
   )
 
   id = fetchUpdateDataFromLocalStorage("BBQuiz", 115)
 
-  let response4 = await axios.get(
-    `https://www.breakingbadapi.com/api/characters/${id}`
+  let response4 = await callApi(
+    `https://www.breakingbadapi.com/api/characters/${id}`,
+    5
   )
 
   console.log(
@@ -82,6 +86,21 @@ const formQuestion = async (noOfOptions, type) => {
     response3?.data[0]?.name,
     response4?.data[0]?.name
   )
+}
+
+const callApi = async (URL, retryCount = 5) => {
+  let response = ""
+  let count = 0
+
+  response = await axios.get(URL)
+  while (!response?.data[0] && count < retryCount) {
+    response = await axios.get(URL)
+    if (!response?.data[0]) {
+      console.log("Retrying....", URL)
+      count++
+    }
+  }
+  return response
 }
 
 export {
