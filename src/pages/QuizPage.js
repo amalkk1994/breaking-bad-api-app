@@ -1,6 +1,12 @@
+import { useEffect } from "react"
 import Question from "../components/Question"
+import { formQuestion } from "../utilities/functionalAPIs"
 
 const QuizPage = () => {
+  useEffect(() => {
+    formQuestion(4, "nickname")
+  }, [])
+
   return (
     <div>
       <p>Quiz page</p>
