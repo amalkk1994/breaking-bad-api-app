@@ -15,7 +15,7 @@ const Question = (props) => {
             return (
               <li key={option}>
                 <input type="radio" name="answers" value={option} id={option} />
-                <label for={option} className="text-xl ml-2">
+                <label htmlFor={option} className="text-xl ml-2">
                   {option}
                 </label>
               </li>
